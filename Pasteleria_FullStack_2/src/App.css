@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.main-content {
+  min-height: calc(100vh - 140px); /* Ajusta según la altura del footer y navbar */
+  margin-bottom: 140px; /* Espacio para el footer fijo */
+}
