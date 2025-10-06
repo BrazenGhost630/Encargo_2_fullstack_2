@@ -14,6 +14,7 @@ import Perfil from './pages/perfil';
 import Nosotros from './pages/nosotros';
 import Carrito from './pages/carrito';
 import Catalogo from './pages/catalogo';
+import Formulario from './Login/Formulario';
 
 // Componentes importados.
 import Footer from './components/footer';
@@ -46,7 +47,7 @@ function App() {
       <div className='main-content'>
         <Routes>
           <Route path='/' element={ <Inicio /> } />
-          <Route path='/login' element={ <Login /> } />
+          <Route path='/login' element={ <Formulario /> } />
           <Route path='/perfil' element={ <Perfil /> }/>
           <Route path='/nosotros' element={ <Nosotros /> }/>
           <Route path='/carrito' element={ <Carrito /> }/>
