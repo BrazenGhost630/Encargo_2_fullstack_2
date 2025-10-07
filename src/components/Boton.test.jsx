@@ -13,7 +13,7 @@ describe("Prueba componente Boton", () => {
         render(<Boton_1/>)
         fireEvent.click(screen.getByText("Presiona el boton"))
         expect(alerta).toBeCalledTimes(1)
-
+        
     })
 
     
