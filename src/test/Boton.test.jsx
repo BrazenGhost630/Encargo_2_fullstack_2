@@ -1,5 +1,5 @@
 import { describe,expect,it, vi } from "vitest";
-import Boton_1 from "./Botonprueba";
+import Boton_1 from "../components/Botonprueba";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 describe("Prueba componente Boton", () => {

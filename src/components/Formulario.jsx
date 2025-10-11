@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import Boton_1 from '../components/Botonprueba';
+import Boton_1 from './Botonprueba';
 
 
 function Formulario({ onLogin }) {

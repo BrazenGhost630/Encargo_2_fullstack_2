@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import './App.css'
+import './css/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Páginas importadas para el router.
@@ -14,7 +14,7 @@ import Perfil from './pages/perfil';
 import Nosotros from './pages/nosotros';
 import Carrito from './pages/carrito';
 import Catalogo from './pages/catalogo';
-import Formulario from './Login/Formulario';
+import Formulario from './components/Formulario';
 
 // Componentes importados.
 import Footer from './components/footer';
