@@ -1,5 +1,10 @@
 .footer-custom {
-  background-color: #f8e1e7; /* Fondo rosado claro */
+  /* background-color: #f8e1e7; Fondo rosado claro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 20px;
   font-family: Arial, sans-serif;
   line-height: 1.2;
@@ -7,6 +12,8 @@
   bottom: 0;
   width: 100%; /* Asegura que ocupe todo el ancho */
   z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  background-color: rgba(255, 255, 255, 0.8); /* Blanco con opacidad del 80% */
+  padding: 2rem 0;
 }
 
 .social-link {

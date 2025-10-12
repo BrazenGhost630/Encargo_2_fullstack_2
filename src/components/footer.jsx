@@ -1,11 +1,12 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/Footer.css';
 
 function Footer(){
     return (
-        <footer className='footer-custom'>
-            <Container className='text-center'>
+        <footer className='footer-custom text-center w-100'>
+            <Container className='text-center w-100'>
                 <h3 className='mb-2'>Contáctanos</h3>
                 <p className='mb-1 fw-bold'>Pastelería Dulce Tradición</p>
                 <p className='mb-1'>Dirección: Calle Valparaiso 123, Viña del Mar</p>
@@ -13,7 +14,7 @@ function Footer(){
                 <p className='mb-1'>Email: contacto@dulceTradicion.com</p>
                 <p className='mb-2 mt-2'>Síguenos en redes sociales:</p>
 
-                <Navbar className='justify-content-center'>
+                <Navbar className='justify-content-center w-100'>
                     <Nav.Link href='https://facebook.com' target='-blank' className='social-link'>
                         Facebook
                     </Nav.Link>

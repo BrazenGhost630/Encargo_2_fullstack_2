@@ -18,46 +18,46 @@ import Formulario from './components/Formulario';
 
 // Componentes importados.
 import Footer from './components/footer';
+import ImagenFondo from './components/imagenFondo';
 
 function App() {
   
 
   // Según yo el perfil no deviera estar en el nav-bar, desde inicio debieramos ir al login por un boton, lo agrego por ahora nomas.
   return (
-    <div>
-      {/* Barra de navegacion */}
-      <Navbar bg='dark' variant='dark' expand='lg'>
-        <Container>
-          <Navbar.Brand as={NavLink} to="/">Pastelería dulce Tradición</Navbar.Brand>
-          <Navbar.Toggle aria-controls='basic-navbar-nav' />
-          <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='me-auto'>
-              <Nav.Link as={NavLink} to="/" end>Inicio</Nav.Link>
-              <Nav.Link as={NavLink} to="/login" end>Login</Nav.Link>
-              <Nav.Link as={NavLink} to="/perfil" end>Perfil</Nav.Link>
-              <Nav.Link as={NavLink} to="/nosotros" end>Nosotros</Nav.Link>
-              <Nav.Link as={NavLink} to="/carrito" end>Carrito</Nav.Link>
-              <Nav.Link as={NavLink} to="/catalogo" end>Catálogo</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+    <ImagenFondo>
+      <div>
+        {/* Barra de navegacion */}
+        <Navbar bg='dark' variant='dark' expand='lg' >
+          <Container>
+            <Navbar.Brand as={NavLink} to="/">Pastelería dulce Tradición</Navbar.Brand>
+            <Navbar.Toggle aria-controls='basic-navbar-nav' />
+            <Navbar.Collapse id='basic-navbar-nav'>
+              <Nav className='me-auto'>
+                <Nav.Link as={NavLink} to="/" end>Inicio</Nav.Link>
+                <Nav.Link as={NavLink} to="/login" end>Login</Nav.Link>
+                <Nav.Link as={NavLink} to="/perfil" end>Perfil</Nav.Link>
+                <Nav.Link as={NavLink} to="/nosotros" end>Nosotros</Nav.Link>
+                <Nav.Link as={NavLink} to="/carrito" end>Carrito</Nav.Link>
+                <Nav.Link as={NavLink} to="/catalogo" end>Catálogo</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
 
-      {/* Contenido de las páginas */}
-      <div className='main-content'>
-        <Routes>
-          <Route path='/' element={ <Inicio /> } />
-          <Route path='/login' element={ <Formulario /> } />
-          <Route path='/perfil' element={ <Perfil /> }/>
-          <Route path='/nosotros' element={ <Nosotros /> }/>
-          <Route path='/carrito' element={ <Carrito /> }/>
-          <Route path='/catalogo' element={ <Catalogo /> }/>
-        </Routes>
+        {/* Contenido de las páginas */}
+        <div className='main-content'>
+          <Routes>
+            <Route path='/' element={ <Inicio /> } />
+            <Route path='/login' element={ <Formulario /> } />
+            <Route path='/perfil' element={ <Perfil /> }/>
+            <Route path='/nosotros' element={ <Nosotros /> }/>
+            <Route path='/carrito' element={ <Carrito /> }/>
+            <Route path='/catalogo' element={ <Catalogo /> }/>
+          </Routes>
+        </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
-    </div>
+    </ImagenFondo>
   )
 }
 

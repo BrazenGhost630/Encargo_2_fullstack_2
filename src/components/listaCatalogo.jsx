@@ -26,10 +26,10 @@ function ListaCatalogo(){
         {id: "3", nombre: "t_3_leches", precio: 18000, url: tresLeches},
         {id: "4", nombre: "Pie de limón", precio: 18000, url: pieLimon},
         {id: "5", nombre: "Kuchen de nuez", precio: 17000, url: kuchenNuez},
-        {id: "6", nombre: "Selva negra", precio: 16000, imagen: selvaNegra},
-        {id: "7", nombre: "Torta de Chocolate" ,precio: 15000, imagen: chocolate},
-        {id: "8", nombre: "Torta de Café", precio: 15000, imagen: tortaCafe},
-        {id: "9", nombre: "Crema Volteada", precio: 14000, imagen: cremaVolteada}
+        {id: "6", nombre: "Selva negra", precio: 16000, url: selvaNegra},
+        {id: "7", nombre: "Torta de Chocolate" ,precio: 15000, url: chocolate},
+        {id: "8", nombre: "Torta de Café", precio: 15000, url: tortaCafe},
+        {id: "9", nombre: "Crema Volteada", precio: 14000, url: cremaVolteada}
     ]
     
 

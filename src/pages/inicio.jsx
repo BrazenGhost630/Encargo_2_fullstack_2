@@ -1,13 +1,22 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import Info from '../components/info';
+import ImagenFondo from '../components/imagenFondo';
+import Footer from '../components/footer';
 
 // Recuerda que acá toda función tiene que exportar.
 function Inicio(){
     return (
-        <Container className="mt-4">
+        <Col md={6}>
             <h1>Inicio</h1>
-        </Container>
+            <Info/>
+            <Footer />
+        </Col>
     )
 }
 
 export default Inicio
+
+
+
+            
