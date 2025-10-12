@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import Footer from '../components/footer'
+import Footer from '../components/footer';
+import Info from '../components/info';
 
 
 
@@ -8,7 +9,8 @@ import Footer from '../components/footer'
 function Nosotros(){
     return (
         <Container className="mt-4">
-            <h1>Nosotros</h1>
+            <h1 style={{backgroundColor: '#fafafaaa'}} >Nosotros</h1>
+            <Info/>
             <Footer />
         </Container>
     )

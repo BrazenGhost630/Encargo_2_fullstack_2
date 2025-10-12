@@ -1,17 +1,17 @@
-import { Col, Row } from "react-bootstrap"
-import CardProducto from "./CardProducto"
+import { Col, Row } from "react-bootstrap";
+import CardProducto from "./CardProducto";
 import { Card } from 'react-bootstrap';
 
 // Importamos las imagenes de la carpeta images.
-import chocolate from "../images/chocolate.jpg"
-import cremaVolteada from "../images/cremaVolteada.jpg"
-import milHoja from "../images/milHoja.jpg"
-import kuchenNuez from "../images/kuchenNuez.webp"
-import pieLimon from "../images/pieLimon.avif"
-import selvaNegra from "../images/selvaNegra.jfif"
-import strudel from "../images/strudel.jpg"
-import tortaCafe from "../images/tortaCafe.jpg"
-import tresLeches from "../images/tresLeches.jpeg"
+import chocolate from "../images/chocolate.jpg";
+import cremaVolteada from "../images/cremaVolteada.jpg";
+import milHoja from "../images/milHoja.jpg";
+import kuchenNuez from "../images/kuchenNuez.webp";
+import pieLimon from "../images/pieLimon.avif";
+import selvaNegra from "../images/selvaNegra.jfif";
+import strudel from "../images/strudel.jpg";
+import tortaCafe from "../images/tortaCafe.jpg";
+import tresLeches from "../images/tresLeches.jpeg";
 
 
 
@@ -36,7 +36,7 @@ function ListaCatalogo(){
     // Toda la implementacion de como se ven los productos en la lista se hace en el componente CardProduct
     // {listaProductos.map((producto) =>: Significa que mapeamos cada producto de la lista, cada diccionario de la lista 
     return (
-    <Row className="justify-content-center">
+    <Row className="justify-content-center mb-5">
         {listaProductos.map((producto) => (
             <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
                 <CardProducto producto={producto} />

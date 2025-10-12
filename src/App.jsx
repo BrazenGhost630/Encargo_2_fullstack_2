@@ -26,14 +26,14 @@ function App() {
   // Según yo el perfil no deviera estar en el nav-bar, desde inicio debieramos ir al login por un boton, lo agrego por ahora nomas.
   return (
     <ImagenFondo>
-      <div>
+      <div className="align-items-center">
         {/* Barra de navegacion */}
         <Navbar bg='dark' variant='dark' expand='lg' >
-          <Container>
+          <Container className='me-auto align-items-center'>
             <Navbar.Brand as={NavLink} to="/">Pastelería dulce Tradición</Navbar.Brand>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
-              <Nav className='me-auto'>
+              <Nav className='me-auto align-items-center' >
                 <Nav.Link as={NavLink} to="/" end>Inicio</Nav.Link>
                 <Nav.Link as={NavLink} to="/login" end>Login</Nav.Link>
                 <Nav.Link as={NavLink} to="/perfil" end>Perfil</Nav.Link>

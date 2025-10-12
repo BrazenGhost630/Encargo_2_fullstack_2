@@ -18,10 +18,11 @@ function CardProducto({ producto }){
                     width: '100%',
                     aspectRatio: '4 / 3', // Proporción 3:4 (alto:ancho)
                     overflow: 'hidden'
-                }}/>
+                }}
+            />
             <Card.Body>
                 <Card.Title>{nombre}</Card.Title>
-                <Card.Text>{precio.toLocaleString()}</Card.Text>
+                <Card.Text>${precio.toLocaleString()}</Card.Text>
                 <Button>Agregar al carrito</Button>
             </Card.Body>
         </Card>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import Info from '../components/info';
 import ImagenFondo from '../components/imagenFondo';
 import Footer from '../components/footer';
@@ -7,16 +7,15 @@ import Footer from '../components/footer';
 // Recuerda que acá toda función tiene que exportar.
 function Inicio(){
     return (
-        <Col md={6}>
-            <h1>Inicio</h1>
-            <Info/>
+        <Container md={6} className="align-items-center">
+            <h1 style={{backgroundColor: '#fafafaaa'}} >Inicio</h1>
             <Footer />
-        </Col>
+        </Container>
     )
 }
 
 export default Inicio
-
+ 
 
 
             
