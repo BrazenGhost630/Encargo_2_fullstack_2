@@ -1,19 +1,30 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import Boton_1 from './Botonprueba';
+import { useNavigate } from "react-router-dom";
 
 
 function Formulario({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
 
   const handleSubmit = (e) => {
     e.preventDefault(); 
 
+    if (email === "admin@admin.com" && password === "1234") {
+      localStorage.setItem("auth", "true");
+      navigate("/admin", { replace: true });
+    }else {
+      alert("Credenciales incorrectas");
+    }
+
     if (onLogin) {
       onLogin(email, password);
     }
+     
+
   };
 
   return (
@@ -22,11 +33,11 @@ function Formulario({ onLogin }) {
       style={{ minHeight: '100vh', background: 'rgba(248, 248, 248, 0.65)' }}>
       <div
         className="p-5 shadow rounded"
-        style={{ background: 'rgba(245, 245, 245, 1)', minWidth: 350, maxWidth: 400 }}>
+        style={{ background: 'rgba(245, 245, 245, 1)', minWidth: 750, maxWidth: 400 }}>
 
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formEmail">
-            <Form.Label>Email</Form.Label>
+            <Form.Label >Email</Form.Label>
             <Form.Control
               type="email"
             
@@ -50,7 +61,7 @@ function Formulario({ onLogin }) {
             Iniciar sesión
           </Button>
           
-          <Boton_1/>
+          
         </Form>
       </div>
     </div>

@@ -15,7 +15,8 @@ import Nosotros from './pages/nosotros';
 import Carrito from './pages/carrito';
 import Catalogo from './pages/catalogo';
 import Formulario from './components/Formulario';
-
+import CambiarAdmin from './components/AdminVerificacion';
+import AdminPanel from './components/AdminPanel';
 // Componentes importados.
 import Footer from './components/footer';
 import ImagenFondo from './components/imagenFondo';
@@ -54,10 +55,16 @@ function App() {
             <Route path='/nosotros' element={ <Nosotros /> }/>
             <Route path='/carrito' element={ <Carrito /> }/>
             <Route path='/catalogo' element={ <Catalogo /> }/>
+            <Route path="/admin"element={<CambiarAdmin>
+                                            <AdminPanel />
+                                        </CambiarAdmin>
+        }></Route>
           </Routes>
         </div>
       </div>
     </ImagenFondo>
+
+
   )
 }
 
