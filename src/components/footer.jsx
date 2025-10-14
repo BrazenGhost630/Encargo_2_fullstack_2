@@ -6,7 +6,7 @@ import '../css/Footer.css';
 function Footer(){
     return (
         <footer style={{backgroundColor: '#fffefec6'}}>
-            <Container fluid className='text-center'>
+            <Container fluid className='text-center max-width: max-content'>
                 <h3 className='mb-2'>Contáctanos</h3>
                 <p className='mb-1 fw-bold'>Pastelería Dulce Tradición</p>
                 <p className='mb-1'>Dirección: Calle Valparaiso 123, Viña del Mar</p>
@@ -14,7 +14,7 @@ function Footer(){
                 <p className='mb-1'>Email: contacto@dulceTradicion.com</p>
                 <p className='mb-2 mt-2'>Síguenos en redes sociales:</p>
 
-                <Navbar className='justify-content-center'>
+                <Navbar className='justify-content-center max-width: max-content'>
                     <Nav.Link href='https://facebook.com' target='-blank' className='social-link'>
                         Facebook
                     </Nav.Link>

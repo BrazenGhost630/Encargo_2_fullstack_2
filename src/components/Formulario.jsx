@@ -56,8 +56,10 @@ function Formulario({ onLogin }) {
               value={password}
               onChange={e => setPassword(e.target.value)}/>
           </Form.Group>
+          <h5></h5>
            <div className="d-grid gap-2">
-          <Button variant="primary" type="submit">
+            <p className='text-align: left' >no tienes cuenta registrate aqui</p>
+          <Button variant="primary" type="submit" >
             Iniciar sesión
           </Button>
           </div>

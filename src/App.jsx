@@ -26,15 +26,16 @@ function App() {
 
   // Según yo el perfil no deviera estar en el nav-bar, desde inicio debieramos ir al login por un boton, lo agrego por ahora nomas.
   return (
-    <ImagenFondo>
-      <div className="align-items-center">
+    
+
+      <div className="align-items-center max-width: max-content">
         {/* Barra de navegacion */}
-        <Navbar bg='dark' variant='dark' expand='lg' >
-          <Container className='me-auto align-items-center'>
+        <Navbar bg='dark' variant='dark' expand='lg' className='fixed-top mb-5 d-flex'>
+          <Container className='max-width: max-content'>
             <Navbar.Brand as={NavLink} to="/">Pastelería dulce Tradición</Navbar.Brand>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
-              <Nav className='me-auto align-items-center' >
+              <Nav className='max-width: max-content' >
                 <Nav.Link as={NavLink} to="/" end>Inicio</Nav.Link>
                 <Nav.Link as={NavLink} to="/login" end>Login</Nav.Link>
                 <Nav.Link as={NavLink} to="/perfil" end>Perfil</Nav.Link>
@@ -47,7 +48,7 @@ function App() {
         </Navbar>
 
         {/* Contenido de las páginas */}
-        <div className='main-content'>
+        <div className='main-content max-width: max-content'>
           <Routes>
             <Route path='/' element={ <Inicio /> } />
             <Route path='/login' element={ <Formulario /> } />
@@ -55,14 +56,17 @@ function App() {
             <Route path='/nosotros' element={ <Nosotros /> }/>
             <Route path='/carrito' element={ <Carrito /> }/>
             <Route path='/catalogo' element={ <Catalogo /> }/>
-            <Route path="/admin"element={<CambiarAdmin>
-                                            <AdminPanel />
-                                        </CambiarAdmin>
-        }></Route>
+            <Route path="/admin"element={
+              <CambiarAdmin>
+                <AdminPanel />
+              </CambiarAdmin>
+        }>
+          
+        </Route>
           </Routes>
         </div>
       </div>
-    </ImagenFondo>
+    
 
 
   )

@@ -14,7 +14,10 @@ const ImagenFondo = ({ children }) => {
                 backgroundSize: "cover", // Cubir pantalla
                 backgroundPosition: "center", // Centrar.
                 backgroundRepeat: "no-repeat", // No repetir la imagen para llenar espacio
-                minHeight: "100vh" // Altura minima.
+                minHeight: "100vh", // Altura minima.
+                backgroundPosition: "center", // Centrar.
+                backgroundRepeat: "no-repeat", // No repetir la imagen para llenar espacio
+                
             }}
         >
             <Row className="align-items-center">

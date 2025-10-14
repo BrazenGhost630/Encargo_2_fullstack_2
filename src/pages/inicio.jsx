@@ -10,39 +10,17 @@ import Presentacion from '../components/Presentacion';
 // Recuerda que acá toda función tiene que exportar.
 function Inicio(){
 
-    const [form, setForm] = useState({
-        nombre: '',
-        valparaiso: '',
-        email: '',
-        telefono: '',
-        calle: '',
-        password: '',
-        confirmPassword: '',
-        
-        
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm({
-            ...form,
-            [name]: value,
-        });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-
-        
-        alert('Formulario enviado');
-    };
     return (
         <Container md={7} className="align-items-center" >
-            
-            <h1 style={{backgroundColor: '#fafafaaa'}} >Inicio</h1>
+            <p>
+
+            </p>
+            <p></p>
+            <p></p>
+            <h1 style={{backgroundColor: '#fafafaaa'}}  >Inicio</h1>
 
             <Presentacion/>
+
             <RegistroInicio/>
 
             <Footer />
