@@ -1,13 +1,21 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
+import ListaCatalogo from '../components/listaCatalogo';
+import ImagenFondo from '../components/imagenFondo';
+import Footer from '../components/footer';
 
 
 
 function Catalogo(){
     return(
-        <Container className="mt-4">
-            <h1>Catálogo</h1>
-        </Container>
+        <Col className="mt-4">
+            <h1 style={{backgroundColor: '#fafafaaa'}} >Catálogo</h1>
+            <ListaCatalogo/>
+            <Col>
+                <Footer />
+            </Col>
+        </Col>
+        
     )
 }
 
