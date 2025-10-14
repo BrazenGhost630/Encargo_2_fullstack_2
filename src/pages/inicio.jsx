@@ -38,13 +38,15 @@ function Inicio(){
         alert('Formulario enviado');
     };
     return (
-        <Container md={6} className="align-items-center">
+        <Container md={7} className="align-items-center" >
+            
             <h1 style={{backgroundColor: '#fafafaaa'}} >Inicio</h1>
 
             <Presentacion/>
             <RegistroInicio/>
 
             <Footer />
+            
         </Container>
     )
 }

@@ -43,7 +43,7 @@ export default function registroInicio({onRegistro}) {
 
         <div
         className="p-5 shadow rounded"
-        style={{ background: 'rgba(245, 245, 245, 1)', minWidth: 1000, maxWidth: 400 }}>
+        style={{ background: 'rgba(255, 209, 249, 1)', minWidth: 1000, maxWidth: 400 }}>
             <h1>Registrarse</h1>
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-5" controlId="formname">
@@ -57,7 +57,6 @@ export default function registroInicio({onRegistro}) {
               required
             />
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formLastName">
             <Form.Label >Apellido</Form.Label>
             <Form.Control
@@ -66,7 +65,6 @@ export default function registroInicio({onRegistro}) {
               placeholder="Ingresa tu apellido"
               value={lastname}
               onChange={e => setLastname(e.target.value)}
-              
             />
           </Form.Group>
 
@@ -84,15 +82,15 @@ export default function registroInicio({onRegistro}) {
 
           <Form.Group className="mb-3" controlId="formreferencia">
             <Form.Label>Referencia del domicilio</Form.Label>
-            <Form.Control
-              type="text"
-            
+            <Form.Control 
+              as="textarea"
+              rows={3}
               placeholder="referencia del domicilio"
               value={referencia}
               onChange={e => setReferencia(e.target.value)}
               
             />
-          </Form.Group>
+          </Form.Group >
 
           <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label >Email</Form.Label>
@@ -115,10 +113,11 @@ export default function registroInicio({onRegistro}) {
               value={password}
               onChange={e => setPassword(e.target.value)}/>
           </Form.Group>
-
-          <Button variant="primary" type="submit">
+          <div className="d-grid gap-2">
+          <Button variant="primary" type="submit" size='lg' >
             Registarse
           </Button>
+          </div>
           
         </Form>
         </div>

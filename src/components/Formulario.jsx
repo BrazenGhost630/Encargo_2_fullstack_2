@@ -32,8 +32,8 @@ function Formulario({ onLogin }) {
       className="d-flex justify-content-center align-items-center"
       style={{ minHeight: '100vh', background: 'rgba(248, 248, 248, 0.65)' }}>
       <div
-        className="p-5 shadow rounded"
-        style={{ background: 'rgba(245, 245, 245, 1)', minWidth: 750, maxWidth: 400 }}>
+        className="form "
+        style={{ background: 'rgba(255, 255, 255, 1)', minWidth: 750, maxWidth: 400 }}>
 
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formEmail">
@@ -56,11 +56,11 @@ function Formulario({ onLogin }) {
               value={password}
               onChange={e => setPassword(e.target.value)}/>
           </Form.Group>
-
+           <div className="d-grid gap-2">
           <Button variant="primary" type="submit">
             Iniciar sesión
           </Button>
-          
+          </div>
           
         </Form>
       </div>
