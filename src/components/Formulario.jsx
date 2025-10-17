@@ -32,8 +32,10 @@ function Formulario({ onLogin }) {
       className="d-flex justify-content-center align-items-center"
       style={{ minHeight: '100vh', background: 'rgba(248, 248, 248, 0.65)' }}>
       <div
-        className="form "
-        style={{ background: 'rgba(255, 255, 255, 1)', minWidth: 750, maxWidth: 400 }}>
+        className="p-5 shadow rounded"
+        style={{ background: 'rgba(243, 183, 238, 1)', minWidth: 750, maxWidth: 400 }}>
+
+          <h1>Iniciar Sesion</h1>
 
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formEmail">
@@ -58,7 +60,10 @@ function Formulario({ onLogin }) {
           </Form.Group>
           <h5></h5>
            <div className="d-grid gap-2">
-            <p className='text-align: left' >no tienes cuenta registrate aqui</p>
+           <p style={{ textAlign: 'left' }}>
+            No tienes cuenta,{' '}
+            <a href="/registro">regístrate aquí</a>
+            </p>
           <Button variant="primary" type="submit" >
             Iniciar sesión
           </Button>

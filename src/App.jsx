@@ -20,6 +20,7 @@ import AdminPanel from './components/AdminPanel';
 // Componentes importados.
 import Footer from './components/footer';
 import ImagenFondo from './components/imagenFondo';
+import Registro from './pages/Registro';
 
 function App() {
   
@@ -52,6 +53,7 @@ function App() {
           <Routes>
             <Route path='/' element={ <Inicio /> } />
             <Route path='/login' element={ <Formulario /> } />
+            <Route path='/registro' element={ <Registro /> } />
             <Route path='/perfil' element={ <Perfil /> }/>
             <Route path='/nosotros' element={ <Nosotros /> }/>
             <Route path='/carrito' element={ <Carrito /> }/>

@@ -21,7 +21,7 @@ function Inicio(){
 
             <Presentacion/>
 
-            <RegistroInicio/>
+            
 
             <Footer />
             
