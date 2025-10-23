@@ -5,7 +5,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './css/App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Para el carrusel.
 
 // Páginas importadas para el router.
@@ -19,7 +18,6 @@ import Formulario from './components/Formulario';
 import CambiarAdmin from './components/AdminVerificacion';
 import AdminPanel from './components/AdminPanel';
 // Componentes importados.
-import Footer from './components/footer';
 import ImagenFondo from './components/imagenFondo';
 
 function App() {

@@ -1,6 +1,5 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Nav } from "react-bootstrap";
 import CardProducto from "./CardProducto";
-import { Card } from 'react-bootstrap';
 
 // Importamos las imagenes de la carpeta images.
 import chocolate from "../images/chocolate.jpg";
@@ -18,6 +17,23 @@ import tresLeches from "../images/tresLeches.jpeg";
 
 // Lista que muestra las cartas que contienen los productos del catalogo.
 function ListaCatalogo(){
+
+    // Estado que usamos para redirigir.
+    const categorias = [
+    { id: 'torta', nombre: 'torta' },
+    { id: 'pan', nombre: 'pan' },
+    { id: 'galleta', nombre: 'galleta' },
+    { id: 'cafe', nombre: 'cafe' }
+  ];
+
+  // Función para manejar el desplazamiento suave
+  const moverASeccion = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
     // Creamos una lista que contiene diccionarios Producto, aca recibimos los datos del local storage o el backend usando REST
     const listaProductos = [
@@ -90,46 +106,73 @@ function ListaCatalogo(){
     // Toda la implementacion de como se ven los productos en la lista se hace en el componente CardProduct
     // {listaProductos.map((producto) =>: Significa que mapeamos cada producto de la lista, cada diccionario de la lista 
     return (
-        <Container>
-            <h1>Tortas</h1>
-            <Row className="justify-content-center mb-5">
-                {tortas.map((producto) => (
-                    <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
-                        <CardProducto producto={producto} />
-                    </Col>
-                ))}
-            </Row>
-            <p/>
+        <Container  fluid style={{ minHeight: '100vh' }}>
+            {/** menu fijo */}
+            <div>
+                <Row >
+                    <Nav className=" menu-fijo" style={{ position: 'sticky', top: '20px' }}>
+                        {categorias.map((categoria) => (
+                        <Nav.Link
+                            key={categoria.id}
+                            onClick={() => moverASeccion(categoria.id)}
+                            className="menu-item"
+                        >
+                            {categoria.nombre}
+                        </Nav.Link>
+                        ))}
+                    </Nav>
+                </Row>
+            </div>
+            
 
-            <h1>Panes</h1>
-            <Row className="justify-content-center mb-5">
-                {panes.map((producto) => (
-                    <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
-                        <CardProducto producto={producto} />
-                    </Col>
-                ))}
-            </Row>
-            <p/>
+            {/** contenido del catalogo */}
+            <Row>
+                <Col>
+                    <div id="torta">
+                        <h1>Tortas</h1>
+                        <Row className="justify-content-center mb-5">
+                            {tortas.map((producto) => (
+                                <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
+                                    <CardProducto producto={producto} />
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
 
-            <h1>Galletas</h1>
-            <Row className="justify-content-center mb-5">
-                {galletas.map((producto) => (
-                    <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
-                        <CardProducto producto={producto} />
-                    </Col>
-                ))}
-            </Row>
-            <p/>
+                    <div id="pan">
+                        <h1>Panes</h1>
+                        <Row className="justify-content-center mb-5">
+                            {panes.map((producto) => (
+                                <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
+                                    <CardProducto producto={producto} />
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
 
-            <h1>Cafés</h1>
-            <Row className="justify-content-center mb-5">
-                {cafes.map((producto) => (
-                    <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
-                        <CardProducto producto={producto} />
-                    </Col>
-                ))}
+                    <div id="galleta">
+                        <h1>Galletas</h1>
+                        <Row className="justify-content-center mb-5">
+                            {galletas.map((producto) => (
+                                <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
+                                    <CardProducto producto={producto} />
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
+
+                    <div id="cafe">
+                        <h1>Cafés</h1>
+                        <Row className="justify-content-center mb-5">
+                            {cafes.map((producto) => (
+                                <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
+                                    <CardProducto producto={producto} />
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
+                </Col>
             </Row>
-            <p/>
         </Container>
         
     );
