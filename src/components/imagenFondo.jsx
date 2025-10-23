@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap"
 
 
 
-// Fondo, este contenedor es donde va todo lo demas y tiene la imagen de fondo que queremos.
+// Fondo, este contenedor es donde va todo lo demas y tiene la imagen de fondo que queremos. 
 const ImagenFondo = ({ children }) => {
     return (
         <Container

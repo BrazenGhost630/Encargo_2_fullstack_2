@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-do
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './css/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Para el carrusel.
 
 // Páginas importadas para el router.
 import Inicio from './pages/inicio';
