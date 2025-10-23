@@ -6,18 +6,21 @@ import ImagenFondo from '../components/imagenFondo';
 import Footer from '../components/footer';
 import Presentacion from '../components/Presentacion';
 import Carrusel from '../components/carrusel';
+import ListaCatalogo from '../components/listaCatalogo';
 
 
 function Inicio(){
     return(
-        <ImagenFondo>
+        <Container style={{ backgroundColor: 'white' }}>
             <Presentacion/>
 
             {/** Contenido tipo tienda. */}
             <Carrusel/>
+            <p/>
+            <ListaCatalogo/>
 
             <Footer/>
-        </ImagenFondo>
+        </Container>
     )
 }
 
