@@ -1,5 +1,7 @@
 import { Col, Container, Row, Nav } from "react-bootstrap";
 import CardProducto from "./CardProducto";
+import { BaseDeDatosContext } from '../components/baseDeDatosContexto';
+import React, { useContext } from 'react';
 
 // Importamos las imagenes de la carpeta images.
 import chocolate from "../images/chocolate.jpg";
@@ -13,28 +15,7 @@ import tortaCafe from "../images/tortaCafe.jpg";
 import tresLeches from "../images/tresLeches.jpeg";
 
 
-
-
-// Lista que muestra las cartas que contienen los productos del catalogo.
-function ListaCatalogo(){
-
-    // Estado que usamos para redirigir.
-    const categorias = [
-    { id: 'torta', nombre: 'torta' },
-    { id: 'pan', nombre: 'pan' },
-    { id: 'galleta', nombre: 'galleta' },
-    { id: 'cafe', nombre: 'cafe' }
-  ];
-
-  // Función para manejar el desplazamiento suave
-  const moverASeccion = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-
+/**
     // Creamos una lista que contiene diccionarios Producto, aca recibimos los datos del local storage o el backend usando REST
     const listaProductos = [
         {id: "1", nombre: "mil_hoja", precio: 16000, url: milHoja, caterogia: "torta"},
@@ -101,6 +82,36 @@ function ListaCatalogo(){
         {id: "moca", nombre: "Café mocaccino", precio: 2600, url: "https://www.cabucoffee.com/newimages/Cafe-Moca.jpg", categoria: "cafe"},
         {id: "helado", nombre: "Café helado", precio: 3200, url: "https://osterstatic.reciperm.com/webp/10230.webp", categoria: "cafe"}
     ]
+    */
+
+
+    
+
+
+
+
+// Lista que muestra las cartas que contienen los productos del catalogo.
+function ListaCatalogo(){
+
+    // Estado que usamos para redirigir.
+    const categorias = [
+    { id: 'torta', nombre: 'torta' },
+    { id: 'pan', nombre: 'pan' },
+    { id: 'galleta', nombre: 'galleta' },
+    { id: 'cafe', nombre: 'cafe' }
+    ];
+
+    // Función para manejar el desplazamiento suave
+    const moverASeccion = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    // buscamos los datos del contexto
+    const productosPrueba = useContext(BaseDeDatosContext);
+    
     
 
     // Toda la implementacion de como se ven los productos en la lista se hace en el componente CardProduct
@@ -130,8 +141,9 @@ function ListaCatalogo(){
                 <Col>
                     <div id="torta">
                         <h1>Tortas</h1>
+                        <h3>Precios por unidad</h3>
                         <Row className="justify-content-center mb-5">
-                            {tortas.map((producto) => (
+                            {productosPrueba.tortas.map((producto) => (
                                 <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
                                     <CardProducto producto={producto} />
                                 </Col>
@@ -141,8 +153,9 @@ function ListaCatalogo(){
 
                     <div id="pan">
                         <h1>Panes</h1>
+                        <h3>Precios por kilo</h3>
                         <Row className="justify-content-center mb-5">
-                            {panes.map((producto) => (
+                            {productosPrueba.panes.map((producto) => (
                                 <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
                                     <CardProducto producto={producto} />
                                 </Col>
@@ -152,8 +165,9 @@ function ListaCatalogo(){
 
                     <div id="galleta">
                         <h1>Galletas</h1>
+                        <h3>Precios por docena</h3>
                         <Row className="justify-content-center mb-5">
-                            {galletas.map((producto) => (
+                            {productosPrueba.galletas.map((producto) => (
                                 <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
                                     <CardProducto producto={producto} />
                                 </Col>
@@ -163,8 +177,9 @@ function ListaCatalogo(){
 
                     <div id="cafe">
                         <h1>Cafés</h1>
+                        <h3>Precios por unidad</h3>
                         <Row className="justify-content-center mb-5">
-                            {cafes.map((producto) => (
+                            {productosPrueba.cafes.map((producto) => (
                                 <Col className="justify-content-center" key={producto.id} xs={12} sm={6} md={4} lg={4}>
                                     <CardProducto producto={producto} />
                                 </Col>
