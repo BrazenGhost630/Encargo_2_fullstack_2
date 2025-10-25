@@ -7,6 +7,6 @@ export default defineConfig({
   base:'./',
   test:{globals: true,
     environment: "jsdom",
-    setupFiles: "./src/components/ConfigTest.js"
+    setupFiles: "./src/test/ConfigTest.js"
   }
 })

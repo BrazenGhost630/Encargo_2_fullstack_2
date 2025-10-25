@@ -17,6 +17,7 @@ import Formulario from './components/Formulario';
 import CambiarAdmin from './components/AdminVerificacion';
 import AdminPanel from './pages/AdminPanel';
 // Componentes importados.
+import NavbarComp from './components/NavbarComp';
 import Footer from './components/footer';
 import ImagenFondo from './components/imagenFondo';
 import Registro from './pages/Registro';
@@ -35,22 +36,7 @@ function App() {
       <BaseDeDatosProvider> 
       <div className="align-items-center max-width: max-content">
         {/* Barra de navegacion */}
-        <Navbar bg='dark' variant='dark' expand='lg' className='fixed-top mb-5 d-flex'>
-          <Container className='max-width: max-content'>
-            <Navbar.Brand as={NavLink} to="/">Pastelería dulce Tradición</Navbar.Brand>
-            <Navbar.Toggle aria-controls='basic-navbar-nav' />
-            <Navbar.Collapse id='basic-navbar-nav'>
-              <Nav className='max-width: max-content' >
-                <Nav.Link as={NavLink} to="/" end>Inicio</Nav.Link>
-                <Nav.Link as={NavLink} to="/login" end>Login</Nav.Link>
-                <Nav.Link as={NavLink} to="/perfil" end>Perfil</Nav.Link>
-                <Nav.Link as={NavLink} to="/nosotros" end>Nosotros</Nav.Link>
-                <Nav.Link as={NavLink} to="/carrito" end>Carrito</Nav.Link>
-                <Nav.Link as={NavLink} to="/catalogo" end>Catálogo</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+        <NavbarComp/>
 
         {/* Contenido de las páginas */}
         <div className='main-content max-width: max-content'>
