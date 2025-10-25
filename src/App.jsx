@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-do
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './css/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 // Páginas importadas para el router.
 import Inicio from './pages/inicio';
 import Login from './pages/login';
@@ -23,6 +22,8 @@ import ImagenFondo from './components/imagenFondo';
 import Registro from './pages/Registro';
 import { LoginProvider } from './apis/Api_Felix.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
+import { BaseDeDatosProvider } from './components/baseDeDatosContexto.jsx';
+import DetalleProducto from './pages/detalleProducto.jsx';
 
 function App() {
   
@@ -31,7 +32,7 @@ function App() {
   return (
     <LoginProvider>
     
-
+      <BaseDeDatosProvider> 
       <div className="align-items-center max-width: max-content">
         {/* Barra de navegacion */}
         <Navbar bg='dark' variant='dark' expand='lg' className='fixed-top mb-5 d-flex'>
@@ -64,6 +65,7 @@ function App() {
             <Route path='/nosotros' element={ <Nosotros /> }/>
             <Route path='/carrito' element={ <Carrito /> }/>
             <Route path='/catalogo' element={ <Catalogo /> }/>
+            <Route path='/detalleProducto' element={ <DetalleProducto/> }/>
             <Route path="/admin"element={
               <CambiarAdmin>
                 <AdminPanel />
@@ -76,6 +78,7 @@ function App() {
           
         </div>
       </div>
+      </BaseDeDatosProvider>
       </LoginProvider>
     
 

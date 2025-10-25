@@ -6,6 +6,8 @@ import ImagenFondo from '../components/imagenFondo';
 import Footer from '../components/footer';
 import RegistroInicio from '../components/RegistroInicio';
 import Presentacion from '../components/Presentacion';
+import Carrusel from '../components/carrusel';
+import ListaCatalogo from '../components/listaCatalogo';
 
 // Recuerda que acá toda función tiene que exportar.
 function Inicio(){
@@ -20,10 +22,12 @@ function Inicio(){
             <h1 style={{backgroundColor: '#fafafaaa'}}  >Inicio</h1>
 
             <Presentacion/>
+        
+            <Carrusel/>
+            <p/>
+            <ListaCatalogo/>
 
-            
-
-            <Footer />
+            <Footer/>
             
         </Container>
     )
