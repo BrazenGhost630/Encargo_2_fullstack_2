@@ -16,17 +16,20 @@ import Carrito from './pages/carrito';
 import Catalogo from './pages/catalogo';
 import Formulario from './components/Formulario';
 import CambiarAdmin from './components/AdminVerificacion';
-import AdminPanel from './components/AdminPanel';
+import AdminPanel from './pages/AdminPanel';
 // Componentes importados.
 import Footer from './components/footer';
 import ImagenFondo from './components/imagenFondo';
 import Registro from './pages/Registro';
+import { LoginProvider } from './apis/Api_Felix.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx';
 
 function App() {
   
 
   // Según yo el perfil no deviera estar en el nav-bar, desde inicio debieramos ir al login por un boton, lo agrego por ahora nomas.
   return (
+    <LoginProvider>
     
 
       <div className="align-items-center max-width: max-content">
@@ -50,11 +53,14 @@ function App() {
 
         {/* Contenido de las páginas */}
         <div className='main-content max-width: max-content'>
+          
           <Routes>
             <Route path='/' element={ <Inicio /> } />
             <Route path='/login' element={ <Formulario /> } />
             <Route path='/registro' element={ <Registro /> } />
-            <Route path='/perfil' element={ <Perfil /> }/>
+            <Route path='/perfil' element={ <PrivateRoute>
+                                                <Perfil/>
+                                              </PrivateRoute> }/>
             <Route path='/nosotros' element={ <Nosotros /> }/>
             <Route path='/carrito' element={ <Carrito /> }/>
             <Route path='/catalogo' element={ <Catalogo /> }/>
@@ -65,9 +71,12 @@ function App() {
         }>
           
         </Route>
+        
           </Routes>
+          
         </div>
       </div>
+      </LoginProvider>
     
 
 

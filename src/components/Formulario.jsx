@@ -1,31 +1,34 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import Boton_1 from './Botonprueba';
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from '../apis/Api_Felix.jsx';
+import { useContext } from 'react';
 
 
-function Formulario({ onLogin }) {
+
+function Formulario() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
 
-  const handleSubmit = (e) => {
+  const { login, error, loading } = useContext(LoginContext);
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault(); 
 
-    if (email === "admin@admin.com" && password === "1234") {
-      localStorage.setItem("auth", "true");
-      navigate("/admin", { replace: true });
-    }else {
-      alert("Credenciales incorrectas");
-    }
+    const user = await login(email, password);
 
-    if (onLogin) {
-      onLogin(email, password);
+    if (user) {
+      if (user.rol === "admin"){
+       navigate("/admin", { replace: true })
+      }
+      else navigate("/perfil", { replace: true });
     }
+  };
      
 
-  };
 
   return (
     <div
@@ -56,23 +59,28 @@ function Formulario({ onLogin }) {
               type="password"
               placeholder="Ingresa tu contraseña"
               value={password}
-              onChange={e => setPassword(e.target.value)}/>
+              onChange={e => setPassword(e.target.value)}
+              required/>
+
           </Form.Group>
+          
           <h5></h5>
+          {error && <p className="text-danger">{error}</p>}
            <div className="d-grid gap-2">
            <p style={{ textAlign: 'left' }}>
             No tienes cuenta,{' '}
             <a href="/registro">regístrate aquí</a>
             </p>
           <Button variant="primary" type="submit" >
-            Iniciar sesión
+            {loading ? "Cargando..." : "Entrar"}
           </Button>
+          
           </div>
           
         </Form>
       </div>
     </div>
   );
-}
+};
 
 export default Formulario;
