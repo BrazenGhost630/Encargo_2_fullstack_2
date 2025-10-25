@@ -20,7 +20,6 @@ function CardProducto({ producto }){
 
     // Funcionalidad del carrito.
     // Creamos una variable donde guardamos el carrito.
-    const {idCarrito, productos} = Carrito;
 
 
 

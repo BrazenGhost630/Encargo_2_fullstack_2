@@ -2,7 +2,13 @@ import { Navigate } from "react-router-dom";
 
 export default function CambiarAdmin({ children }) {
 
-  const loggearAdmin = localStorage.getItem("auth") === "true";
+  
+  const user = JSON.parse(localStorage.getItem("user"));
+  
 
-  return loggearAdmin ? children : <Navigate to="/" replace />;
+  if (!user || user.rol !== "admin") {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
 }
