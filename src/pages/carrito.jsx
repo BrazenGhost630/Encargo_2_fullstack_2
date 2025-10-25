@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import { Container } from 'react-bootstrap';
 import ImagenFondo from '../components/imagenFondo';
 import Footer from '../components/footer';

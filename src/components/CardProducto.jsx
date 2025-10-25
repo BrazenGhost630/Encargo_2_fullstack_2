@@ -9,8 +9,10 @@ import { useNavigate } from 'react-router-dom';
 function CardProducto({ producto }){
     // Creamos variables donde guardamos los datos del producto.
     const { id, nombre, precio, url, resena, categoria } = producto;
+
     // Funcion que importa navigate
     const navigate = useNavigate()
+
     // Funcion que maneja el click en la imagen.
     const funcionalidadClick = () => {
         // Guardamos el producto de la iteración actual en el local storage.
@@ -18,9 +20,18 @@ function CardProducto({ producto }){
         navigate('/detalleProducto')
     }
 
-    // Funcionalidad del carrito.
-    // Creamos una variable donde guardamos el carrito.
 
+    // Funcionalidad del carrito.
+    // Creamos una funcion que agrega el producto al carrito
+    const agregarACarrito = () => {
+        // Partimos recuperando el carrito del local storage.
+        const carritoActual = JSON.parse(localStorage.getItem('carrito')) || [];
+        // Agregamos el producto al carrito.
+        const nuevoCarrito = [...carritoActual, producto];
+        localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+        alert('Producto agregado al carrito');
+    }
+    
 
 
 
@@ -50,7 +61,8 @@ function CardProducto({ producto }){
                 <Card.Body>
                     <Card.Title>{nombre}</Card.Title>
                     <Card.Text>${precio.toLocaleString()}</Card.Text>
-                    <Button>Agregar al carrito</Button>
+                    <Button onClick={agregarACarrito}
+                    >Agregar al carrito</Button>
                 </Card.Body>
             </div>
         </Card>

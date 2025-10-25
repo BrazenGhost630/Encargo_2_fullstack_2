@@ -1,33 +1,65 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import CardCarrito from "./cardCarrito";
-
-import milHoja from "../images/milHoja.jpg";
-import strudel from "../images/strudel.jpg";
-import pieLimon from "../images/pieLimon.avif";
-import tresLeches from "../images/tresLeches.jpeg";
+import { useState, useEffect } from 'react';
 
 
 
 // Lista de productos en el carrito. 
 function ListaCarrito(){
+    // Creamos una variable que contenga el carrito tomado de local storage
+    const [carrito, setCarrito] = useState([])
+    // Usamos una función asíncrona para recuperar la info del local storage.
+    useEffect(() => {
+        // Recuperamos el producto del local storage, es un json
+        const carritoGuardado = localStorage.getItem('carrito')
+        if (carritoGuardado){ // Si recibimos datos
+            setCarrito(JSON.parse(carritoGuardado)) // parseamos el json al producto
+        }
+    }, [])
+    // tiene que estar para cargar la imagen
+    if (carrito.length === 0) {
+    return (
+      <Container className="my-5">
+        <Row>
+          <Col>
+            <h2>El carrito está vacío</h2>
+          </Col>
+        </Row>
+      </Container>
+    );}
 
-    // Por ahora vamos a tener los datos acá, despues los vamos a sacar usando REST.
-    const carrito = {
-        id: "1",
-        productos: [
-            {id: "1", nombre: "mil_hoja", precio: 16000, url: milHoja},
-            {id: "2", nombre: "Strudel de manzana", precio: 21000, url: strudel},
-            {id: "3", nombre: "t_3_leches", precio: 18000, url: tresLeches},
-            {id: "4", nombre: "Pie de limón", precio: 18000, url: pieLimon}
-        ]
+    // Funcion que elimina un producto del carrito.
+    const eliminarDelCarrito = (id) => {
+    // Encontramos el índice del primer producto encontrado.
+    const indice = carrito.findIndex((producto) => producto.id === id);
+    if (indice !== -1) { // Pregunta si el indice es distinto de -1, -1 sería la respuesta negativa.
+      // Creamos una copia del carrito
+      const nuevoCarrito = [...carrito];
+      // Eliminamos solo la primera ocurrencia usando splice
+      nuevoCarrito.splice(indice, 1);
+      // Actualizamos el estado del carrito
+      setCarrito(nuevoCarrito);
+      // Persistimos el nuevo carrito en localStorage
+      localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
     }
+  }
+
+    // Calculamos el precio total del carrito.
+    const precioTotal = carrito.reduce((total, productoCarrito) => total + productoCarrito.precio, 0);
 
 
+    // Funcionalidad para comprar.
+
+    
+
+    // Le pasamos la funcion eliminar carrito y el indice a cardCarrito, un cacho separar los componentes.
     return (
         <Container className=" mb-5">
-            {carrito.productos.map((productoCarrito) => (
-                <div key={productoCarrito.id} className="mb-3" >
-                    <CardCarrito producto={productoCarrito} />
+            {carrito.map((productoCarrito, index) => (
+                <div key={`${productoCarrito.id}-${index}`} className="mb-3">
+                    <h3>Precio total: ${precioTotal} </h3>
+                    <Button onClick={{}} >Comprar</Button>
+                    <CardCarrito producto={productoCarrito} eliminarDelCarrito={eliminarDelCarrito} />
                 </div>
             ))}
         </Container>
