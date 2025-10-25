@@ -17,6 +17,15 @@ function CardProducto({ producto }){
         localStorage.setItem('productoSeleccionado', JSON.stringify(producto))
         navigate('/detalleProducto')
     }
+
+    // Funcionalidad del carrito.
+    // Creamos una variable donde guardamos el carrito.
+    const {idCarrito, productos} = Carrito;
+
+
+
+
+
     // Retornamos un html.
     // Comillas para futuras referencias:  `````````
     // El link es para redirigir a una pagina detalle del producto.

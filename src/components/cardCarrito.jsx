@@ -6,7 +6,7 @@ import { Button, Card, Row, Col } from "react-bootstrap";
 function CardCarrito({ producto }){
     // Creamos variables donde guardamos los datos del producto.
     const { id, nombre, precio, url } = producto;
-    // Retornamos un objeto rendereable.
+    // Retornamos un objeto rendereable. 
     return (
         <Card className="mb-3" style={{ width: '100%' }}>
             <Row className="align-items-center g-0">

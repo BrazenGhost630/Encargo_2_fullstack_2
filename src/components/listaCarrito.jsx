@@ -8,7 +8,7 @@ import tresLeches from "../images/tresLeches.jpeg";
 
 
 
-// Lista de productos en el carrito.
+// Lista de productos en el carrito. 
 function ListaCarrito(){
 
     // Por ahora vamos a tener los datos acá, despues los vamos a sacar usando REST.

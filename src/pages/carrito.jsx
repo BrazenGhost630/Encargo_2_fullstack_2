@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import ImagenFondo from '../components/imagenFondo';
 import Footer from '../components/footer';
-import ListaCarrito from '../components/listaCarrito';
+import ListaCarrito from '../components/listaCarrito'; 
 
 
 
