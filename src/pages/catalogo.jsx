@@ -8,7 +8,7 @@ import Footer from '../components/footer';
 
 function Catalogo(){
     return(
-        <Col className="mt-4">
+        <Col className="mt-4" >
             <h1 style={{backgroundColor: '#fafafaaa'}} >Catálogo</h1>
             <ListaCatalogo/>
             <Col>

@@ -23,7 +23,7 @@ import DetalleProducto from './pages/detalleProducto';
 // Importaciones del felix
 import Registro from './pages/Registro';
 import { LoginProvider } from './apis/Api_Felix.jsx';
-import PrivateRoute from './components/PrivateRoute.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx'; 
 
 function App() {
 

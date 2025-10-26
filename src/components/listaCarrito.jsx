@@ -31,37 +31,43 @@ function ListaCarrito(){
     // Funcion que elimina un producto del carrito.
     const eliminarDelCarrito = (id) => {
     // Encontramos el índice del primer producto encontrado.
-    const indice = carrito.findIndex((producto) => producto.id === id);
+    const indice = carrito.findIndex((producto) => producto.id === id)
     if (indice !== -1) { // Pregunta si el indice es distinto de -1, -1 sería la respuesta negativa.
       // Creamos una copia del carrito
-      const nuevoCarrito = [...carrito];
+      const nuevoCarrito = [...carrito]
       // Eliminamos solo la primera ocurrencia usando splice
-      nuevoCarrito.splice(indice, 1);
+      nuevoCarrito.splice(indice, 1)
       // Actualizamos el estado del carrito
-      setCarrito(nuevoCarrito);
+      setCarrito(nuevoCarrito)
       // Persistimos el nuevo carrito en localStorage
-      localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+      localStorage.setItem('carrito', JSON.stringify(nuevoCarrito))
     }
   }
 
     // Calculamos el precio total del carrito.
-    const precioTotal = carrito.reduce((total, productoCarrito) => total + productoCarrito.precio, 0);
+    const precioTotal = carrito.reduce((total, productoCarrito) => total + productoCarrito.precio, 0)
 
 
     // Funcionalidad para comprar.
+    const comprar = () => {
+    setCarrito([]); // Vaciar el carrito tras la compra
+    localStorage.setItem("carrito", JSON.stringify([])); // Actualizar localStorage
+    window.alert("Carrito comprado, muchas gracias!"); // Alerta.
+  };
 
     
 
     // Le pasamos la funcion eliminar carrito y el indice a cardCarrito, un cacho separar los componentes.
     return (
         <Container className=" mb-5">
-            {carrito.map((productoCarrito, index) => (
-                <div key={`${productoCarrito.id}-${index}`} className="mb-3">
-                    <h3>Precio total: ${precioTotal} </h3>
-                    <Button onClick={{}} >Comprar</Button>
-                    <CardCarrito producto={productoCarrito} eliminarDelCarrito={eliminarDelCarrito} />
-                </div>
-            ))}
+          <h3 style={{backgroundColor: '#fafafaff'}} >Precio total: ${precioTotal} </h3>
+          <Button onClick={comprar} >Comprar</Button>
+          <p className='mt-3' />
+          {carrito.map((productoCarrito, index) => (
+              <div key={`${productoCarrito.id}-${index}`} className="mb-3">
+                  <CardCarrito producto={productoCarrito} eliminarDelCarrito={eliminarDelCarrito} />
+              </div>
+          ))}
         </Container>
     )
 }
