@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import Footer from '../components/footer'
+import Footer from '../components/Footer.jsx'
 import PerfilComp from '../components/PerfilComp.jsx';
 
 

@@ -1,12 +1,20 @@
-import { Button, Card, Row, Col } from "react-bootstrap";
+import { Button, Card, Row, Col } from "react-bootstrap"; 
+import { useState, useEffect } from 'react';  
 
 
 
 // Formato de cada fila del carrito.
-function CardCarrito({ producto }){
+function CardCarrito({ producto, eliminarDelCarrito }){
     // Creamos variables donde guardamos los datos del producto.
-    const { id, nombre, precio, url } = producto;
-    // Retornamos un objeto rendereable.
+    const { id, nombre, precio, url, resena, categoria } = producto;
+
+
+    
+
+
+
+
+    // Retornamos un objeto rendereable. 
     return (
         <Card className="mb-3" style={{ width: '100%' }}>
             <Row className="align-items-center g-0">
@@ -37,8 +45,8 @@ function CardCarrito({ producto }){
 
                 <Col xs={12} md={3} className="d-flex align-items-center">
                     <Card.Body className="d-flex gap-2">
-                        <Button variant="danger">Eliminar</Button>
-                        <Button variant="primary">Aumentar</Button>
+                        <Button onClick={() => eliminarDelCarrito(id)}
+                         variant="danger">Eliminar</Button>
                     </Card.Body>
                 </Col>
             </Row>

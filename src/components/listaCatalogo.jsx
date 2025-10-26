@@ -1,6 +1,6 @@
 import { Col, Container, Row, Nav } from "react-bootstrap";
 import CardProducto from "./CardProducto";
-import { BaseDeDatosContext } from '../components/baseDeDatosContexto';
+import { BaseDeDatosContext } from './BaseDeDatosContexto';
 import React, { useContext } from 'react';
 
 // Importamos las imagenes de la carpeta images.
@@ -117,7 +117,7 @@ function ListaCatalogo(){
     // Toda la implementacion de como se ven los productos en la lista se hace en el componente CardProduct
     // {listaProductos.map((producto) =>: Significa que mapeamos cada producto de la lista, cada diccionario de la lista 
     return (
-        <Container  fluid style={{ minHeight: '100vh' }}>
+        <Container  fluid style={{ minHeight: '100vh', backgroundColor: '#ffffffff'  }}>
             {/** menu fijo */}
             <div>
                 <Row >

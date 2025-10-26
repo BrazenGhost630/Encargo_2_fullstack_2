@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Col } from 'react-bootstrap';
-import ListaCatalogo from '../components/listaCatalogo';
-import ImagenFondo from '../components/imagenFondo';
-import Footer from '../components/footer';
+import ListaCatalogo from '../components/ListaCatalogo';
+
+import Footer from '../components/Footer';
 
 
 

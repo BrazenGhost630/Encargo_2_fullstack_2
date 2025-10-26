@@ -10,20 +10,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Inicio from './pages/inicio';
 import Login from './pages/login';
 import Perfil from './pages/perfil';
-import Nosotros from './pages/nosotros';
-import Carrito from './pages/carrito';
-import Catalogo from './pages/catalogo';
+import Nosotros from './pages/nosotros.jsx';
+import Carrito from './pages/carrito.jsx';
+import Catalogo from './pages/catalogo.jsx';
 import Formulario from './components/Formulario';
 import CambiarAdmin from './components/AdminVerificacion';
 import AdminPanel from './pages/AdminPanel';
 // Componentes importados.
 import NavbarComp from './components/NavbarComp';
-import Footer from './components/footer';
-import ImagenFondo from './components/imagenFondo';
+
+
 import Registro from './pages/Registro';
 import { LoginProvider } from './apis/Api_Felix.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
-import { BaseDeDatosProvider } from './components/baseDeDatosContexto.jsx';
+import { BaseDeDatosProvider } from './components/BaseDeDatosContexto.jsx';
 import DetalleProducto from './pages/detalleProducto.jsx';
 
 function App() {
