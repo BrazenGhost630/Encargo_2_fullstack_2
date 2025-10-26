@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from '../apis/Api_Felix.jsx';
 import { useContext } from 'react';
+import BotonInicioSesion from './BotonInicioSesion.jsx';
 
 
 
@@ -71,10 +72,8 @@ function Formulario() {
             No tienes cuenta,{' '}
             <a href="/registro">regístrate aquí</a>
             </p>
-          <Button variant="primary" type="submit" >
-            {loading ? "Cargando..." : "Entrar"}
-          </Button>
-          
+            
+            <BotonInicioSesion loading={loading} />
           </div>
           
         </Form>

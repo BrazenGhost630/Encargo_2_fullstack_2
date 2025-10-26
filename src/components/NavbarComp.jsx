@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function NavbarComp() {
 
-    return (<Navbar bg='dark' variant='dark' expand='lg' className='fixed-top mb-5 d-flex'>
+    return (<Navbar bg='dark' variant='dark' expand='lg' className='fixed-top mb-5 d-flex' as="nav">
           <Container className='max-width: max-content'>
             <Navbar.Brand as={NavLink} to="/">Pastelería dulce Tradición</Navbar.Brand>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
