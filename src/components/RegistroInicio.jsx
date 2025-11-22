@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Form, Button } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
+import { LoginContext } from '../apis/Api_Felix.jsx';
+import BotonInicioSesion from './BotonInicioSesion.jsx';
 
-export default function registroInicio({onRegistro}) {
+export default function RegistroInicio() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [nombre, setNombre] = useState('');
@@ -9,32 +12,35 @@ export default function registroInicio({onRegistro}) {
     const [direccion, setDireccion] = useState('');
     const [referencia, setReferencia] = useState('');
 
-    const handleSubmit = (e) => {
-    e.preventDefault();
+    const { register, loading, error } = useContext(LoginContext);
+    const navigate = useNavigate();
 
-    
-    if (!email || !password || !nombre || !direccion) {
-      alert("Por favor completa los campos requeridos.");
-      return;
-    }
-     const datosUsuario = {
-      nombre,
-      lastname,
-      direccion,
-      referencia,
-      email,
-      password,
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!email || !password || !nombre || !direccion) {
+            alert("Por favor completa los campos requeridos: Nombre, Dirección, Email y Contraseña.");
+            return;
+        }
+
+        
+        const datosUsuario = {
+            nombre,
+            apellido: lastname,
+            direccion,
+            referencia,
+            email,
+            contrasenia: password,
+            rol: "user" 
+        };
+
+        const clienteGuardado = await register(datosUsuario);
+        
+        if (clienteGuardado) {
+            alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
+            navigate('/login'); 
+        }
     };
-    if (onRegistro) {
-      onRegistro(datosUsuario);
-    }
-    setEmail("");
-    setPassword("");
-    setNombre("");
-    setLastname("");
-    setDireccion("");
-    setReferencia("");
-}
 
 
   return (
@@ -113,10 +119,11 @@ export default function registroInicio({onRegistro}) {
               value={password}
               onChange={e => setPassword(e.target.value)}/>
           </Form.Group>
+          {error && <p className="text-danger">{error}</p>}
           <div className="d-grid gap-2">
-          <Button variant="primary" type="submit" size='lg' >
-            Registarse
-          </Button>
+            <Button variant="primary" type="submit" size='lg' disabled={loading}>
+              {loading ? "Registrando..." : "Registrarse"}
+            </Button>
           </div>
           
         </Form>
@@ -124,4 +131,3 @@ export default function registroInicio({onRegistro}) {
     </div>
   );
 }
-

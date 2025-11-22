@@ -20,15 +20,16 @@ export function LoginProvider({ children }) {
     setError(null);
 
     try {
-      const response = await fetch("http://demo1029291.mockable.io/user");
+      // 1. Hacemos un GET para obtener todos los usuarios
+      const response = await fetch("http://localhost:8080/clientes");
 
       if (!response.ok) throw new Error("Error al obtener usuarios");
 
-      const data = await response.json();
+      const usuarios = await response.json();
       
-
-      const foundUser = data.users.find(
-        (u) => u.email === email && u.password === password
+      // 2. Buscamos el usuario que coincida con email y contraseña en el frontend
+      const foundUser = usuarios.find(
+        (u) => u.email === email && u.contrasenia === password
       );
 
       if (foundUser) {
@@ -50,13 +51,42 @@ export function LoginProvider({ children }) {
     }
   };
 
+  const register = async (datosUsuario) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('http://localhost:8080/clientes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(datosUsuario),
+      });
+
+      if (response.ok) {
+        const clienteGuardado = await response.json();
+        return clienteGuardado;
+      } else {
+        const errorData = await response.text();
+        setError(errorData || 'Ocurrió un error durante el registro.');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error de red:', error);
+      setError('No se pudo conectar con el servidor. Inténtalo más tarde.');
+      return null;
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
   };
 
   return (
-    <LoginContext.Provider value={{ user, login, logout, loading, error }}>
+    <LoginContext.Provider value={{ user, login, logout, register, loading, error }}>
       {children}
     </LoginContext.Provider>
   );

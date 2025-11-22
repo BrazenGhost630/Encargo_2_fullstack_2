@@ -5,9 +5,9 @@ export default function AdminUser() {
     const [usuarios, setUsuarios] = useState([]);
 
     useEffect(() => {
-    fetch("http://demo1029291.mockable.io/user")
+    fetch("http://localhost:8080/clientes")
       .then(res => res.json())
-      .then(data => setUsuarios(data.users))
+      .then(data => setUsuarios(data))
       .catch(err => console.error(err));
   }, []);
 
@@ -27,7 +27,7 @@ export default function AdminUser() {
           {usuarios.map(u => (
             <tr key={u.id}>
               <td>{u.id}</td>
-              <td>{u.name}</td>
+              <td>{u.nombre}</td>
               <td>{u.email}</td>
               <td>{u.rol}</td>
             </tr>
@@ -37,6 +37,3 @@ export default function AdminUser() {
     </div>
   );
 }
-
-
-
