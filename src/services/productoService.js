@@ -4,7 +4,7 @@ import axios from "axios";
 
 // Acá falta resolver las distintas respuestas de REST, para cuando la respuesta es 200 o 500 o 404, etc...
 
-const API_URL = "http://localhost:8080/catalogo"
+const API_URL = "http://54.89.13.60:8080/catalogo"
 
 export const productoService = {
 

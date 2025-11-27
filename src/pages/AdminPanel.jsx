@@ -23,6 +23,9 @@ export default function adminPanel() {
 
       <AdminUser />
 
+
+      <AdminCatalogo/>
+
       
 
 

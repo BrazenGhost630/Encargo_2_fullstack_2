@@ -23,7 +23,6 @@ import NavbarComp from './components/NavbarComp';
 import Registro from './pages/Registro';
 import { LoginProvider } from './apis/Api_Felix.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
-import { BaseDeDatosProvider } from './components/BaseDeDatosContexto.jsx';
 import DetalleProducto from './pages/detalleProducto.jsx';
 
 function App() {
@@ -33,7 +32,7 @@ function App() {
   return (
     <LoginProvider>
     
-      <BaseDeDatosProvider> 
+      
       <div className="align-items-center max-width: max-content">
         {/* Barra de navegacion */}
         <NavbarComp/>
@@ -64,7 +63,7 @@ function App() {
           
         </div>
       </div>
-      </BaseDeDatosProvider>
+    
       </LoginProvider>
     
 
